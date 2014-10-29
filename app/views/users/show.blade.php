@@ -4,6 +4,8 @@
 	
 		<h1>Hello, {{ $user->username }} </h1>
 
+    {{ $user->firstLetter() }}
+
 @stop
 
 

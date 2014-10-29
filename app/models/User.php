@@ -29,7 +29,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 
 
-public  function isValid()
+	public  function isValid()
 
 	{
 
@@ -42,6 +42,11 @@ public  function isValid()
 
 		return false;
 
+	}
+
+	public function firstLetter()
+	{
+		return substr($this->username, 0, 1);
 	}
 
 	/**
