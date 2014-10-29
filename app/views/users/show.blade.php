@@ -1,15 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Laravel PHP Framework</title>
-	
-</head>
-<body>
-	
-		<h1>Single User</h1>
+@extends('layout.default')
 
-	{{$user->username}}
+@section ('content')
+	
+		<h1>Hello, {{ $user->username }} </h1>
 
-</body>
-</html>
+@stop
+
+
+	
+
+

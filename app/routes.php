@@ -11,28 +11,9 @@
 |
 */
 
-Route::get('/users', function()
-{
-
-	 // $user = new User;
-	 // $user->username = 'Teste';
-	 // $user->password = Hash::make('123');
-
-	 // $user->save();
-
-	 // User::create([
-	 // 	'username' => 'Teste Create',
-	 // 	'password' => Hash::make('123')
-	 // 	]);
-
-	$users = User::all();
-	return View::make('users.index', ['users' => $users]);
-});
-
-Route::get('/users/{username}', function($username)
-{
-
-
-	$user = User::whereUsername($username)->first();
-	return View::make('users.show', ['user' => $user]);
-});
+//Route::get('users', 'UsersController@index');
+//Route::get('users/{username}', 'UsersController@show');
+Route::resource('users', 'UsersController');
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@destroy');
+Route::resource('sessions', 'SessionsController');
